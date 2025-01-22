@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block titulo %} {{ curso.nombre}} {% endblock %}
+{% block contenido %}
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">{{ curso.nombre }}</h2>
+        <p class="card-text">{{ curso.descripcion }}</p>
+        <ul class="list-group list group-flush">
+            <li class="list-group-item"><strong>Fecha Inicio:</strong>{{ curso.fecha_inicio }}</li>
+            <li class="list-group-item"><strong>Fecha Fin:</strong>{{ curso.fecha_fin }}</li>
+            <li class="list-group-item"><strong>Cupos:</strong>{{ curso.cupos }}</li>
+             <li class="list-group-item"><strong>Estado:</strong>{% if curso.estado %}Activo{% else %}Inactivo{% endif %}</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
